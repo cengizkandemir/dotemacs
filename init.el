@@ -54,8 +54,6 @@
 
 (setq line-number-mode t)
 (setq column-number-mode t)
-(setq-default indent-tabs-mode nil)
-(setq-default c-basic-offset 4)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -66,6 +64,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (desktop-save-mode 1)
 (save-place-mode t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq-default indent-tabs-mode nil)
+(c-add-style "gnu-8"
+             '("gnu"
+               (c-basic-offset . 8)))
+(setq-default c-default-style "gnu-8")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;
@@ -120,3 +127,4 @@
   ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
   :init
   (setq ccls-args '("--log-file=/tmp/ccls.log")))
+

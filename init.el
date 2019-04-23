@@ -46,7 +46,6 @@
 (use-package fill-column-indicator
   :ensure t
   :hook
-  ;; TODO: define a function to modes to both c and c++ hooks
   (prog-mode . fci-mode)
   :init
   (setq fci-rule-width 5)
@@ -68,11 +67,29 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq-default indent-tabs-mode nil)
-(c-add-style "gnu-8"
-             '("gnu"
-               (c-basic-offset . 8)))
-(setq-default c-default-style "gnu-8")
+
+(use-package cc-mode
+  :ensure t
+  :bind
+  (:map c-mode-base-map
+	("\C-m" . c-context-line-break)))
+
+;; TODO add style instead of creating one from scratch
+(defconst ck-cc-style
+  '((c-basic-offset . 4)
+    (indent-tabs-mode . nil)
+    (c-block-comment-prefix . "")
+    (c-offsets-alist . ((template-args-cont ++)
+			(innamespace . 0)
+			(stream-op . ++)
+			(arglist-close . ++)
+			(arglist-cont-nonempty c-lineup-gcc-asm-reg ++)
+			(arglist-intro . ++)
+			(substatement-open . 0)
+			(statement-cont . ++)
+			(inline-open . 0)))))
+(c-add-style "ck" ck-cc-style)
+(setq-default c-default-style "ck")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;

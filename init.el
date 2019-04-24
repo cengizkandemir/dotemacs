@@ -74,11 +74,9 @@
   (:map c-mode-base-map
 	("\C-m" . c-context-line-break)))
 
-;; TODO add style instead of creating one from scratch
-(defconst ck-cc-style
-  '((c-basic-offset . 4)
+(c-add-style "ck"
+  '("stroustrup"
     (indent-tabs-mode . nil)
-    (c-block-comment-prefix . "")
     (c-offsets-alist . ((template-args-cont ++)
 			(innamespace . 0)
 			(stream-op . ++)
@@ -88,7 +86,6 @@
 			(substatement-open . 0)
 			(statement-cont . ++)
 			(inline-open . 0)))))
-(c-add-style "ck" ck-cc-style)
 (setq-default c-default-style "ck")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

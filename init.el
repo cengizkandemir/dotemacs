@@ -122,6 +122,8 @@
   :ensure t
   :commands lsp
   :init
+  (setq lsp-enable-indentation nil)
+  (setq lsp-enable-on-type-formatting nil)
   (setq lsp-prefer-flymake nil))
 
 (use-package lsp-ui

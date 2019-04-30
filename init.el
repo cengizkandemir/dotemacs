@@ -61,6 +61,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; misc ;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package restart-emacs
+  :ensure t)
+
 (desktop-save-mode 1)
 (save-place-mode t)
 (setq x-hyper-keysym 'meta)

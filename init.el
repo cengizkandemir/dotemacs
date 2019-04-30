@@ -43,13 +43,10 @@
   :config
   (global-display-line-numbers-mode))
 
-(use-package fill-column-indicator
-  :ensure t
-  :hook
-  (prog-mode . fci-mode)
-  :init
-  (setq fci-rule-width 5)
-  (setq fci-rule-column 80))
+(setq-default
+ whitespace-line-column 80
+ whitespace-style '(face lines-tail empty))
+(add-hook 'prog-mode-hook #'whitespace-mode)
 
 (setq line-number-mode t)
 (setq column-number-mode t)

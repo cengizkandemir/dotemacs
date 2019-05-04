@@ -120,7 +120,7 @@
   (setq-default flycheck-disabled-checkers
 		'(emacs-lisp-checkdoc c/c++-clang c/c++-cppcheck c/c++-gcc)))
 
-(use-package company               
+(use-package company
   :ensure t
   :hook
   (c++-mode . company-mode)
@@ -152,4 +152,3 @@
   ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
   :init
   (setq ccls-args '("--log-file=/tmp/ccls.log")))
-

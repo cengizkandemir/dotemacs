@@ -4,3 +4,6 @@
 * fix lsp-ui popups, heavy-templated code takes half of the screen
   * perhaps better to have it popup on demand
 * magit customization
+
+#### FIX
+* certain lines can be assigned to both arglist-cont-nonempty and arglist-intro, effectively indenting twice

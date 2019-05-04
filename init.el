@@ -63,7 +63,11 @@
 
 (desktop-save-mode 1)
 (save-place-mode t)
-(setq x-hyper-keysym 'meta)
+
+(global-set-key (kbd "H-p") 'windmove-up)
+(global-set-key (kbd "H-n") 'windmove-down)
+(global-set-key (kbd "H-b") 'windmove-left)
+(global-set-key (kbd "H-f") 'windmove-right)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;

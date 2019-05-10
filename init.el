@@ -69,6 +69,8 @@
 (global-set-key (kbd "H-b") 'windmove-left)
 (global-set-key (kbd "H-f") 'windmove-right)
 
+(which-function-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

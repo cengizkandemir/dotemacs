@@ -94,7 +94,17 @@
 			(substatement-open . 0)
 			(statement-cont . ++)
 			(inline-open . 0)))))
+
+(setq-default tab-width 8)
+(c-add-style "airties"
+	     '("stroustrup"
+	       (indent-tabs-mode . t)
+	       (c-basic-offset . 8)))
+
 (setq-default c-default-style "ck")
+
+(add-hook 'c-mode-hook (lambda ()
+			  (c-set-style "airties")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;

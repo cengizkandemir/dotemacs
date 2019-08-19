@@ -17,7 +17,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auctex cmake-mode magit zenburn-theme use-package restart-emacs nyan-mode lsp-ui flycheck fill-column-indicator company-lsp ccls bug-hunter))))
+    (pdf-tools auctex cmake-mode magit zenburn-theme use-package restart-emacs nyan-mode lsp-ui flycheck fill-column-indicator company-lsp ccls bug-hunter))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -134,6 +134,10 @@
   :commands magit-status
   :bind
   (("C-x g" . magit-status)))
+
+(use-package pdf-tools
+  :ensure t
+  :config (pdf-tools-install))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; intellisense ;;;;;;;;;;;;;;;;

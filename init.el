@@ -131,6 +131,10 @@
   ;(TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
   )
 
+(use-package pdf-tools
+  :ensure t
+  :config (pdf-tools-install))
+
 ; TODO: find a way to move this into :hook of tex/auctex package
 (add-hook 'TeX-after-compilation-finished-functions
 	  #'TeX-revert-document-buffer)
@@ -143,10 +147,6 @@
   :commands magit-status
   :bind
   (("C-x g" . magit-status)))
-
-(use-package pdf-tools
-  :ensure t
-  :config (pdf-tools-install))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; intellisense ;;;;;;;;;;;;;;;;

@@ -124,7 +124,16 @@
   :init
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
-  (setq-default TeX-master nil))
+  (setq-default TeX-master nil)
+  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+	TeX-source-correlate-start-server t)
+  ;:hook
+  ;(TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
+  )
+
+; TODO: find a way to move this into :hook of tex/auctex package
+(add-hook 'TeX-after-compilation-finished-functions
+	  #'TeX-revert-document-buffer)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

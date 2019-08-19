@@ -11,7 +11,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (cmake-mode magit zenburn-theme use-package restart-emacs nyan-mode lsp-ui flycheck fill-column-indicator company-lsp ccls bug-hunter))))
+    (auctex cmake-mode magit zenburn-theme use-package restart-emacs nyan-mode lsp-ui flycheck fill-column-indicator company-lsp ccls bug-hunter))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -112,6 +112,13 @@
 			  (c-set-style "airties")))
 
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+
+(use-package tex
+  :ensure auctex
+  :init
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+  (setq-default TeX-master nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

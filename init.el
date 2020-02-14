@@ -157,7 +157,9 @@
   :hook
   (c++-mode . company-mode)
   (c-mode . company-mode)
-  (emacs-lisp-mode . company-mode))
+  (emacs-lisp-mode . company-mode)
+  :bind
+  (("C-." . company-complete)))
 
 (use-package lsp-mode
   :ensure t

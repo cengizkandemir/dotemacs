@@ -69,6 +69,7 @@
       `(("." . ,(concat user-emacs-directory "backups"))))
 
 (auto-save-visited-mode)
+(setq scroll-preserve-screen-position t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;

@@ -101,6 +101,10 @@
 	       (indent-tabs-mode . t)
 	       (c-basic-offset . 8)))
 
+(c-add-style "gorgon"
+	     '("stroustrup"
+	       (indent-tabs-mode . nil)))
+
 (setq-default c-default-style "ck")
 
 (add-hook 'c-mode-hook (lambda ()

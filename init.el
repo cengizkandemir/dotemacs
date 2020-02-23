@@ -168,7 +168,7 @@
   :init
   (setq lsp-enable-indentation nil)
   (setq lsp-enable-on-type-formatting nil)
-  (setq lsp-prefer-flymake nil))
+  (setq lsp-diagnostic-package :flycheck))
 
 (use-package lsp-ui
   :ensure t

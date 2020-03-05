@@ -71,6 +71,11 @@
 (auto-save-visited-mode)
 (setq scroll-preserve-screen-position t)
 
+(ido-mode 1)
+;; does not seem to be necessary for ido mode
+;(setq read-file-name-completion-ignore-case t)
+;(setq read-buffer-completion-ignore-case t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

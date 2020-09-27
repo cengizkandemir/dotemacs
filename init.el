@@ -14,7 +14,9 @@
 ;;;;;;;;;;;;;;;;;; cosmetics ;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package zenburn-theme
-  :ensure t)
+  :ensure t
+  :config
+  (load-theme 'zenburn t))
 
 (use-package nyan-mode
   :ensure t

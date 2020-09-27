@@ -99,16 +99,17 @@
 			(substatement-open . 0)
 			(statement-cont . ++)
 			(inline-open . 0)))))
-
-(setq-default tab-width 8)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
 (c-add-style "airties"
 	     '("stroustrup"
 	       (indent-tabs-mode . t)
 	       (c-basic-offset . 8)))
 
 (c-add-style "gorgon"
-	     '("stroustrup"
-	       (indent-tabs-mode . nil)))
+             '("stroustrup"
+               (indent-tabs-mode . nil)
+               (c-offsets-alist . ((innamespace . +)))))
 
 (setq-default c-default-style "ck")
 

@@ -180,18 +180,11 @@
   :init
   (setq lsp-enable-indentation nil)
   (setq lsp-enable-on-type-formatting nil)
-  (setq lsp-diagnostic-package :flycheck))
+  (setq lsp-diagnostics-provider :flycheck))
 
 (use-package lsp-ui
   :ensure t
   :commands lsp-ui-mode)
-
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp
-  :after company
-  :init
-  (push 'company-lsp company-backends))
 
 (use-package ccls
   :ensure t

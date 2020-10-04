@@ -74,6 +74,12 @@
 (setq scroll-preserve-screen-position t)
 
 (ido-mode 1)
+
+(use-package move-text
+  :ensure t
+  :bind
+  (("H-M-p" . move-text-up)
+   ("H-M-n" . move-text-down)))
 ;; does not seem to be necessary for ido mode
 ;(setq read-file-name-completion-ignore-case t)
 ;(setq read-buffer-completion-ignore-case t)

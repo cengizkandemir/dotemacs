@@ -73,8 +73,6 @@
 (auto-save-visited-mode)
 (setq scroll-preserve-screen-position t)
 
-(ido-mode 1)
-
 (use-package move-text
   :ensure t
   :bind
@@ -90,6 +88,16 @@
   ("C-c p" . projectile-command-map)
   :config
   (projectile-mode +1))
+
+(ido-mode 1)
+(ido-everywhere 1)
+(use-package flx-ido
+  :ensure t
+  :after (ido)
+  :config
+  (flx-ido-mode 1)
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;

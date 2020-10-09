@@ -84,6 +84,13 @@
 ;(setq read-file-name-completion-ignore-case t)
 ;(setq read-buffer-completion-ignore-case t)
 
+(use-package projectile
+  :ensure t
+  :bind
+  ("C-c p" . projectile-command-map)
+  :config
+  (projectile-mode +1))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

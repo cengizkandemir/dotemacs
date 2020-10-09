@@ -99,6 +99,15 @@
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces nil))
 
+(use-package treemacs
+  :ensure t
+  :bind
+  ("<f9>" . treemacs))
+
+(use-package treemacs-projectile
+  :ensure t
+  :after (treemacs projectile))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

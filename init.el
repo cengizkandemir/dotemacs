@@ -205,6 +205,9 @@
 
 (use-package lsp-mode
   :ensure t
+  :hook
+  (c++-mode . lsp)
+  (c-mode . lsp)
   :commands lsp
   :init
   (setq lsp-enable-indentation nil)

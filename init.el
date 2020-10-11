@@ -65,8 +65,6 @@
 (global-set-key (kbd "H-b") 'windmove-left)
 (global-set-key (kbd "H-f") 'windmove-right)
 
-(which-function-mode)
-
 (setq backup-directory-alist
       `(("." . ,(concat user-emacs-directory "backups"))))
 
@@ -209,9 +207,11 @@
 (use-package lsp-mode
   :ensure t
   :hook
-  (c++-mode . lsp)
-  (c-mode . lsp)
-  :commands lsp
+  (c++-mode . lsp-deferred)
+  (c-mode . lsp-deferred)
+  (lsp-mode . lsp-headerline-breadcrumb-mode)
+  :commands
+  (lsp lsp-deferred)
   :init
   (setq lsp-enable-indentation nil)
   (setq lsp-enable-on-type-formatting nil)

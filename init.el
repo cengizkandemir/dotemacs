@@ -20,10 +20,9 @@
 
 (use-package nyan-mode
   :ensure t
-  :init
+  :config
   (setq nyan-animate-nyancat t)
   (setq nyan-wavy-trail t)
-  :config
   (nyan-mode))
 
 (use-package paren
@@ -150,7 +149,7 @@
 
 (use-package tex
   :ensure auctex
-  :init
+  :config
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
   (setq-default TeX-master nil)
@@ -189,7 +188,7 @@
   (c++-mode . flycheck-mode)
   (c-mode . flycheck-mode)
   (emacs-lisp-mode . flycheck-mode)
-  :init
+  :config
   (setq-default flycheck-disabled-checkers
 		'(emacs-lisp-checkdoc c/c++-clang c/c++-cppcheck c/c++-gcc)))
 
@@ -212,7 +211,7 @@
   (lsp-mode . lsp-headerline-breadcrumb-mode)
   :commands
   (lsp lsp-deferred)
-  :init
+  :config
   (setq lsp-enable-indentation nil)
   (setq lsp-enable-on-type-formatting nil)
   (setq lsp-diagnostics-provider :flycheck))
@@ -229,5 +228,5 @@
   :ensure t
   :hook
   ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
-  :init
+  :config
   (setq ccls-args '("--log-file=/tmp/ccls.log")))

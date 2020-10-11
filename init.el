@@ -201,7 +201,10 @@
   (c++-mode . company-mode)
   (c-mode . company-mode)
   :bind
-  (("C-." . company-complete)))
+  (("C-." . company-complete))
+  :config
+  (setq company-minimum-prefix-length 1
+        company-idle-delay 0.05))
 
 (use-package lsp-mode
   :ensure t

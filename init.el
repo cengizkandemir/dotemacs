@@ -122,6 +122,7 @@
     (c-offsets-alist . ((template-args-cont ++)
 			(innamespace . 0)
 			(stream-op . ++)
+            (label . +)
 			(arglist-close . ++)
 			(arglist-cont-nonempty c-lineup-gcc-asm-reg ++)
 			(arglist-intro . ++)

@@ -69,7 +69,7 @@ public:
 void foo::bar(enum_t val) const
 {
     if(true) {
-      some_label:
+        some_label:
         std::cout << "bar" << std::endl;
     }
     else if(false) {
@@ -103,7 +103,7 @@ void foo::bar(enum_t val) const
         ;
     }
 
-  some_other_label:
+    some_other_label:
     return;
 }
 

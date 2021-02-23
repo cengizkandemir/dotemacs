@@ -6,7 +6,7 @@
       package-archive-priorities
       '(("GNU ELPA"     . 10)
         ("MELPA"        . 5)
-	("MELPA Stable" . 0)))
+        ("MELPA Stable" . 0)))
 
 (package-initialize)
 
@@ -76,8 +76,8 @@
   (("H-M-p" . move-text-up)
    ("H-M-n" . move-text-down)))
 ;; does not seem to be necessary for ido mode
-;(setq read-file-name-completion-ignore-case t)
-;(setq read-buffer-completion-ignore-case t)
+;;(setq read-file-name-completion-ignore-case t)
+;;(setq read-buffer-completion-ignore-case t)
 
 (use-package projectile
   :ensure t
@@ -114,28 +114,30 @@
   :ensure t
   :bind
   (:map c-mode-base-map
-	("\C-m" . c-context-line-break)))
+        ("\C-m" . c-context-line-break)))
 
 (c-add-style "ck"
-  '("stroustrup"
-    (indent-tabs-mode . nil)
-    (c-offsets-alist . ((template-args-cont ++)
-			(innamespace . 0)
-			(stream-op . ++)
-            (label . +)
-			(arglist-close . ++)
-			(arglist-cont-nonempty c-lineup-gcc-asm-reg ++)
-			(arglist-intro . ++)
-			(substatement-open . 0)
-			(statement-cont . ++)
-			(inline-open . 0)))))
+             '("stroustrup"
+               (indent-tabs-mode . nil)
+               (c-offsets-alist . ((template-args-cont ++)
+                                   (innamespace . 0)
+                                   (stream-op . ++)
+                                   (label . +)
+                                   (arglist-close . ++)
+                                   (arglist-cont-nonempty c-lineup-gcc-asm-reg
+                                                          ++)
+                                   (arglist-intro . ++)
+                                   (substatement-open . 0)
+                                   (statement-cont . ++)
+                                   (inline-open . 0)))))
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq-default c-backslash-column 0)
+
 (c-add-style "airties"
-	     '("stroustrup"
-	       (indent-tabs-mode . t)
-	       (c-basic-offset . 8)))
+             '("stroustrup"
+               (indent-tabs-mode . t)
+               (c-basic-offset . 8)))
 
 (c-add-style "gorgon"
              '("stroustrup"
@@ -144,8 +146,7 @@
 
 (setq-default c-default-style "ck")
 
-(add-hook 'c-mode-hook (lambda ()
-			  (c-set-style "airties")))
+(add-hook 'c-mode-hook (lambda () (c-set-style "airties")))
 
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 
@@ -156,22 +157,22 @@
   (setq TeX-parse-self t)
   (setq-default TeX-master nil)
   (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
-	TeX-source-correlate-start-server t)
-  ;:hook
-  ;(TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
+        TeX-source-correlate-start-server t)
+  ;;:hook
+  ;;(TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
   )
 
 (use-package pdf-tools
   :ensure t
   :config (pdf-tools-install))
 
-; TODO: find a way to move this into :hook of tex/auctex package
+;; TODO: find a way to move this into :hook of tex/auctex package
 (add-hook 'TeX-after-compilation-finished-functions
-	  #'TeX-revert-document-buffer)
+          #'TeX-revert-document-buffer)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 (use-package magit
   :ensure t
   :commands magit-status
@@ -190,9 +191,9 @@
   (c++-mode . flycheck-mode)
   (c-mode . flycheck-mode)
   (emacs-lisp-mode . flycheck-mode)
-  ;:config
-  ;(setq-default flycheck-disabled-checkers
-  ;  	'(emacs-lisp-checkdoc c/c++-clang c/c++-cppcheck c/c++-gcc))
+  ;;:config
+  ;;(setq-default flycheck-disabled-checkers
+  ;;              '(emacs-lisp-checkdoc c/c++-clang c/c++-cppcheck c/c++-gcc))
   )
 
 (use-package company
@@ -227,9 +228,9 @@
   :ensure t
   :commands lsp-treemacs-errors-list)
 
-;(use-package ccls
-;  :ensure t
-;  :hook
-;  ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
-;  :config
-;  (setq ccls-args '("--log-file=/tmp/ccls.log")))
+;;(use-package ccls
+;;  :ensure t
+;;  :hook
+;;  ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
+;;  :config
+;;  (setq ccls-args '("--log-file=/tmp/ccls.log")))

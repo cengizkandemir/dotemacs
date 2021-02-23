@@ -37,7 +37,7 @@
 
 (setq-default
  whitespace-line-column 80
- whitespace-style '(face lines-tail empty trailing))
+ whitespace-style '(face lines-tail empty trailing tab-mark))
 (add-hook 'prog-mode-hook #'whitespace-mode)
 
 (setq line-number-mode t)

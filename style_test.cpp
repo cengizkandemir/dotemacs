@@ -80,16 +80,16 @@ void foo::bar(enum_t val) const
     }
 
     switch(val) {
-        case enum_t::a:
-        {
-            break;
-        }
-        case enum_t::b:
-            break;
-        case enum_t::c:
-            break;
-        default:
-            break;
+    case enum_t::a:
+    {
+        break;
+    }
+    case enum_t::b:
+        break;
+    case enum_t::c:
+        break;
+    default:
+        break;
     }
 
     do {

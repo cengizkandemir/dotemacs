@@ -188,9 +188,10 @@
   (c++-mode . flycheck-mode)
   (c-mode . flycheck-mode)
   (emacs-lisp-mode . flycheck-mode)
-  :config
-  (setq-default flycheck-disabled-checkers
-		'(emacs-lisp-checkdoc c/c++-clang c/c++-cppcheck c/c++-gcc)))
+  ;:config
+  ;(setq-default flycheck-disabled-checkers
+  ;  	'(emacs-lisp-checkdoc c/c++-clang c/c++-cppcheck c/c++-gcc))
+  )
 
 (use-package company
   :ensure t
@@ -224,9 +225,9 @@
   :ensure t
   :commands lsp-treemacs-errors-list)
 
-(use-package ccls
-  :ensure t
-  :hook
-  ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
-  :config
-  (setq ccls-args '("--log-file=/tmp/ccls.log")))
+;(use-package ccls
+;  :ensure t
+;  :hook
+;  ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
+;  :config
+;  (setq ccls-args '("--log-file=/tmp/ccls.log")))

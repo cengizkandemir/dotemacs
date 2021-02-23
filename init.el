@@ -131,6 +131,7 @@
 			(inline-open . 0)))))
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
+(setq-default c-backslash-column 0)
 (c-add-style "airties"
 	     '("stroustrup"
 	       (indent-tabs-mode . t)

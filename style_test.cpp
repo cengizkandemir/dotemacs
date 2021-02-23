@@ -1,11 +1,11 @@
 #include <iostream>
 
-#define SOME_MACRO_DEF(arg1, arg2) \
-    if(arg1 > arg2) {              \
-        ;                          \
-    }                              \
-    else {                         \
-        ;                          \
+#define SOME_MACRO_DEF(arg1, arg2)  \
+    if(arg1 > arg2) {               \
+        ;                           \
+    }                               \
+    else {                          \
+        ;                           \
     }
 
 namespace

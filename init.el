@@ -1,4 +1,11 @@
+;;; init.el --- n/a
+
+;;; Commentary:
+;; n/a
+
+;;; Code:
 (require 'package)
+
 (setq package-archives
       '(("GNU ELPA"     . "https://elpa.gnu.org/packages/")
         ("MELPA Stable" . "https://stable.melpa.org/packages/")
@@ -234,3 +241,7 @@
 ;;  ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
 ;;  :config
 ;;  (setq ccls-args '("--log-file=/tmp/ccls.log")))
+
+(provide 'init)
+
+;;; init.el ends here

@@ -22,29 +22,26 @@
   (package-install 'use-package))
 
 (require 'use-package)
+(setq use-package-always-ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;; cosmetics ;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package zenburn-theme
-  :ensure t
   :config
   (load-theme 'zenburn t))
 
 (use-package nyan-mode
-  :ensure t
   :config
   (setq nyan-animate-nyancat t)
   (setq nyan-wavy-trail t)
   (nyan-mode))
 
 (use-package paren
-  :ensure t
   :config
   (show-paren-mode 1))
 
 (use-package display-line-numbers
-  :ensure t
   :config
   (global-display-line-numbers-mode))
 
@@ -63,8 +60,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; misc ;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package restart-emacs
-  :ensure t)
+(use-package restart-emacs)
 
 (desktop-save-mode 1)
 (save-place-mode t)
@@ -84,7 +80,6 @@
 (setq scroll-preserve-screen-position t)
 
 (use-package move-text
-  :ensure t
   :bind
   (("H-M-p" . move-text-up)
    ("H-M-n" . move-text-down)))
@@ -93,7 +88,6 @@
 ;;(setq read-buffer-completion-ignore-case t)
 
 (use-package projectile
-  :ensure t
   :bind
   ("C-c p" . projectile-command-map)
   :config
@@ -102,7 +96,6 @@
 (ido-mode 1)
 (ido-everywhere 1)
 (use-package flx-ido
-  :ensure t
   :after (ido)
   :config
   (flx-ido-mode 1)
@@ -110,12 +103,10 @@
   (setq ido-use-faces nil))
 
 (use-package treemacs
-  :ensure t
   :bind
   ("<f9>" . treemacs))
 
 (use-package treemacs-projectile
-  :ensure t
   :after (treemacs projectile))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -124,7 +115,6 @@
 (electric-pair-mode 1)
 
 (use-package cc-mode
-  :ensure t
   :bind
   (:map c-mode-base-map
         ("\C-m" . c-context-line-break)))
@@ -176,7 +166,6 @@
   )
 
 (use-package pdf-tools
-  :ensure t
   :config (pdf-tools-install))
 
 ;; TODO: find a way to move this into :hook of tex/auctex package
@@ -187,7 +176,6 @@
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package magit
-  :ensure t
   :commands magit-status
   :bind
   (("C-x g" . magit-status)))
@@ -195,11 +183,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; intellisense ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package cmake-mode
-  :ensure t)
+(use-package cmake-mode)
 
 (use-package flycheck
-  :ensure t
   :hook
   (c++-mode . flycheck-mode)
   (c-mode . flycheck-mode)
@@ -210,7 +196,6 @@
   )
 
 (use-package company
-  :ensure t
   :hook
   (c++-mode . company-mode)
   (c-mode . company-mode)
@@ -221,7 +206,6 @@
         company-idle-delay 0.05))
 
 (use-package lsp-mode
-  :ensure t
   :hook
   (c++-mode . lsp-deferred)
   (c-mode . lsp-deferred)
@@ -234,15 +218,12 @@
   (setq lsp-diagnostics-provider :flycheck))
 
 (use-package lsp-ui
-  :ensure t
   :commands lsp-ui-mode)
 
 (use-package lsp-treemacs
-  :ensure t
   :commands lsp-treemacs-errors-list)
 
 ;;(use-package ccls
-;;  :ensure t
 ;;  :hook
 ;;  ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
 ;;  :config

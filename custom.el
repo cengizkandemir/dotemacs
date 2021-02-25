@@ -10,7 +10,7 @@
  '(lsp-file-watch-ignored-directories
    '("[/\\\\]\\.git$" "[/\\\\]\\.hg$" "[/\\\\]\\.bzr$" "[/\\\\]_darcs$" "[/\\\\]\\.svn$" "[/\\\\]_FOSSIL_$" "[/\\\\]\\.idea$" "[/\\\\]\\.ensime_cache$" "[/\\\\]\\.eunit$" "[/\\\\]node_modules$" "[/\\\\]\\.fslckout$" "[/\\\\]\\.tox$" "[/\\\\]\\.stack-work$" "[/\\\\]\\.bloop$" "[/\\\\]\\.metals$" "[/\\\\]target$" "[/\\\\]\\.ccls-cache$" "[/\\\\]\\.deps$" "[/\\\\]build-aux$" "[/\\\\]autom4te.cache$" "[/\\\\]\\.reference$" "[/\\\\]build$"))
  '(package-selected-packages
-   '(lsp-treemacs treemacs-projectile treemacs flx-ido projectile move-text ccls company-lsp lsp-ui lsp-mode company flycheck cmake-mode magit pdf-tools auctex restart-emacs nyan-mode zenburn-theme use-package)))
+   '(ivy lsp-treemacs treemacs-projectile treemacs flx-ido projectile move-text ccls company-lsp lsp-ui lsp-mode company flycheck cmake-mode magit pdf-tools auctex restart-emacs nyan-mode zenburn-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -83,24 +83,21 @@
   :bind
   (("H-M-p" . move-text-up)
    ("H-M-n" . move-text-down)))
-;; does not seem to be necessary for ido mode
-;;(setq read-file-name-completion-ignore-case t)
-;;(setq read-buffer-completion-ignore-case t)
+
+(use-package ivy
+  :ensure swiper
+  :bind
+  ("C-s" . swiper)
+  :config
+  (setq ivy-on-del-error-function #'ignore)
+  (ivy-mode 1))
+
 
 (use-package projectile
   :bind
   ("C-c p" . projectile-command-map)
   :config
   (projectile-mode +1))
-
-(ido-mode 1)
-(ido-everywhere 1)
-(use-package flx-ido
-  :after (ido)
-  :config
-  (flx-ido-mode 1)
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-faces nil))
 
 (use-package treemacs
   :bind
@@ -189,11 +186,7 @@
   :hook
   (c++-mode . flycheck-mode)
   (c-mode . flycheck-mode)
-  (emacs-lisp-mode . flycheck-mode)
-  ;;:config
-  ;;(setq-default flycheck-disabled-checkers
-  ;;              '(emacs-lisp-checkdoc c/c++-clang c/c++-cppcheck c/c++-gcc))
-  )
+  (emacs-lisp-mode . flycheck-mode))
 
 (use-package company
   :hook
@@ -222,12 +215,6 @@
 
 (use-package lsp-treemacs
   :commands lsp-treemacs-errors-list)
-
-;;(use-package ccls
-;;  :hook
-;;  ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
-;;  :config
-;;  (setq ccls-args '("--log-file=/tmp/ccls.log")))
 
 (provide 'init)
 

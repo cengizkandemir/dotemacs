@@ -207,8 +207,7 @@
   (lsp lsp-deferred)
   :config
   (setq lsp-enable-indentation nil)
-  (setq lsp-enable-on-type-formatting nil)
-  (setq lsp-diagnostics-provider :flycheck))
+  (setq lsp-enable-on-type-formatting nil))
 
 (use-package lsp-ui
   :commands lsp-ui-mode)

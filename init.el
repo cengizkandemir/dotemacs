@@ -212,6 +212,8 @@
   (setq lsp-enable-on-type-formatting nil))
 
 (use-package lsp-ui
+  :bind
+  ([remap xref-find-references] . lsp-ui-peek-find-references)
   :commands lsp-ui-mode)
 
 (use-package lsp-treemacs

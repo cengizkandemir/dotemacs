@@ -111,7 +111,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(electric-pair-mode 1)
+(defun enable-electric-pair-local-mode ()
+  "Enable electric pair mode locally."
+  (electric-pair-local-mode 1))
+(add-hook 'c++-mode-hook 'enable-electric-pair-local-mode)
+(add-hook 'c++-hook 'enable-electric-pair-local-mode)
+(add-hook 'emacs-lisp-mode-hook 'enable-electric-pair-local-mode)
 
 (use-package cc-mode
   :bind

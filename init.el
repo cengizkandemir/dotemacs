@@ -219,6 +219,9 @@
 (use-package lsp-treemacs
   :commands lsp-treemacs-errors-list)
 
+(use-package treemacs-magit
+  :after (treemacs magit))
+
 (provide 'init)
 
 ;;; init.el ends here

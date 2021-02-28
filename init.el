@@ -184,11 +184,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package cmake-mode)
 
-(use-package flycheck
-  :hook
-  (c++-mode . flycheck-mode)
-  (c-mode . flycheck-mode)
-  (emacs-lisp-mode . flycheck-mode))
+(use-package eglot
+  :bind
+  ("C-c r" . eglot-rename))
 
 (use-package company
   :hook
@@ -199,25 +197,6 @@
   :config
   (setq company-minimum-prefix-length 1
         company-idle-delay 0.05))
-
-(use-package lsp-mode
-  :hook
-  (c++-mode . lsp-deferred)
-  (c-mode . lsp-deferred)
-  (lsp-mode . lsp-headerline-breadcrumb-mode)
-  :commands
-  (lsp lsp-deferred)
-  :config
-  (setq lsp-enable-indentation nil)
-  (setq lsp-enable-on-type-formatting nil))
-
-(use-package lsp-ui
-  :bind
-  ([remap xref-find-references] . lsp-ui-peek-find-references)
-  :commands lsp-ui-mode)
-
-(use-package lsp-treemacs
-  :commands lsp-treemacs-errors-list)
 
 (provide 'init)
 

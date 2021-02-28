@@ -117,6 +117,7 @@
 (add-hook 'c++-mode-hook 'enable-electric-pair-local-mode)
 (add-hook 'c++-hook 'enable-electric-pair-local-mode)
 (add-hook 'emacs-lisp-mode-hook 'enable-electric-pair-local-mode)
+(add-hook 'cmake-mode-hook 'enable-electric-pair-local-mode)
 
 (use-package cc-mode
   :bind

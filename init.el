@@ -181,6 +181,8 @@
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package magit
+  :hook
+  (git-commit-mode . (lambda () (setq fill-column 74)))
   :commands magit-status
   :bind
   (("C-x g" . magit-status))

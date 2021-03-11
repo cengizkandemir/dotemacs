@@ -221,6 +221,7 @@
   :commands
   (lsp lsp-deferred)
   :config
+  (setq lsp-enable-snippet nil)
   (setq lsp-enable-indentation nil)
   (setq lsp-enable-on-type-formatting nil))
 

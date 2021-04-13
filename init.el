@@ -31,12 +31,6 @@
   :config
   (load-theme 'zenburn t))
 
-(use-package nyan-mode
-  :config
-  (setq nyan-animate-nyancat t)
-  (setq nyan-wavy-trail t)
-  (nyan-mode))
-
 (use-package paren
   :config
   (show-paren-mode 1))

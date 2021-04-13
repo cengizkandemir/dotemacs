@@ -45,7 +45,8 @@
   :hook
   (c++-mode . display-line-numbers-mode)
   (c-mode . display-line-numbers-mode)
-  (emacs-lisp-mode . display-line-numbers-mode))
+  (emacs-lisp-mode . display-line-numbers-mode)
+  (sh-mode . display-line-numbers-mode))
 
 (setq-default
  whitespace-line-column 80
@@ -236,6 +237,11 @@
 
 (use-package treemacs-magit
   :after (treemacs magit))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;; debugging ;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package dap-mode)
 
 (provide 'init)
 

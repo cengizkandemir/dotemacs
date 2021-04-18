@@ -108,8 +108,8 @@
   (c++-mode . hs-minor-mode)
   (c-mode . hs-minor-mode)
   :bind
-  (("H-h" . hs-show-block)
-   ("H-s" . hs-hide-block)
+  (("H-h" . hs-hide-block)
+   ("H-s" . hs-show-block)
    ("H-t" . hs-toggle-hiding)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -103,6 +103,15 @@
 (use-package treemacs-projectile
   :after (treemacs projectile))
 
+(use-package hideshow
+  :hook
+  (c++-mode . hs-minor-mode)
+  (c-mode . hs-minor-mode)
+  :bind
+  (("H-h" . hs-show-block)
+   ("H-s" . hs-hide-block)
+   ("H-t" . hs-toggle-hiding)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

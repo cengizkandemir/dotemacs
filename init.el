@@ -92,6 +92,7 @@
 
 
 (use-package projectile
+  :ensure ag
   :bind
   ("C-c p" . projectile-command-map)
   :config

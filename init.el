@@ -72,6 +72,8 @@
 (global-set-key (kbd "H-y") "\C-a\C- \C-n\M-w\C-y\C-p\C-e")
 (global-set-key [f7] 'recompile)
 
+(setq compilation-scroll-output t)
+
 (setq backup-directory-alist
       `(("." . ,(concat user-emacs-directory "backups"))))
 

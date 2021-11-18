@@ -39,6 +39,7 @@
   :after (cmake-mode) ; needed?
   :hook
   (c++-mode . display-line-numbers-mode)
+  (rust-mode . display-line-numbers-mode)
   (c-mode . display-line-numbers-mode)
   (emacs-lisp-mode . display-line-numbers-mode)
   (sh-mode . display-line-numbers-mode)
@@ -66,6 +67,10 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file :noerror)
+
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 (global-set-key (kbd "H-p") 'windmove-up)
 (global-set-key (kbd "H-n") 'windmove-down)
@@ -114,6 +119,7 @@
   :hook
   (c++-mode . hs-minor-mode)
   (c-mode . hs-minor-mode)
+  (rust-mode . hs-minor-mode)
   :bind
   (("H-h" . hs-hide-block)
    ("H-s" . hs-show-block)
@@ -127,6 +133,7 @@
   (electric-pair-local-mode 1))
 (add-hook 'c++-mode-hook 'enable-electric-pair-local-mode)
 (add-hook 'c++-hook 'enable-electric-pair-local-mode)
+(add-hook 'rust-mode-hook 'enable-electric-pair-local-mode)
 (add-hook 'emacs-lisp-mode-hook 'enable-electric-pair-local-mode)
 (add-hook 'cmake-mode-hook 'enable-electric-pair-local-mode)
 
@@ -188,6 +195,13 @@
 (add-hook 'TeX-after-compilation-finished-functions
           #'TeX-revert-document-buffer)
 
+(use-package rust-mode
+  :bind
+  (:map rust-mode-map
+        ("C-c C-c" . rust-run))
+  :config
+  (setq rust-format-on-save t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;; vcs ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -212,12 +226,14 @@
   :hook
   (c++-mode . flycheck-mode)
   (c-mode . flycheck-mode)
+  (rust-mode . flycheck-mode)
   (emacs-lisp-mode . flycheck-mode))
 
 (use-package company
   :hook
   (c++-mode . company-mode)
   (c-mode . company-mode)
+  (rust-mode . company-mode)
   :bind
   (("C-." . company-complete))
   :config
@@ -229,6 +245,7 @@
   :hook
   (c++-mode . lsp-deferred)
   (c-mode . lsp-deferred)
+  (rust-mode . lsp-deferred)
   (lsp-mode . lsp-headerline-breadcrumb-mode)
   :commands
   (lsp lsp-deferred)

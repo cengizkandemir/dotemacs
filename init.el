@@ -43,6 +43,7 @@
   (c-mode . display-line-numbers-mode)
   (emacs-lisp-mode . display-line-numbers-mode)
   (sh-mode . display-line-numbers-mode)
+  (org-mode . display-line-numbers-mode)
   (cmake-mode . display-line-numbers-mode))
 
 (setq-default

@@ -126,6 +126,13 @@
    ("H-s" . hs-show-block)
    ("H-t" . hs-toggle-hiding)))
 
+
+(use-package org
+  :hook
+  ((org-mode . turn-on-auto-fill)
+   (org-mode . (lambda () (set-fill-column 120)))))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; coding style ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

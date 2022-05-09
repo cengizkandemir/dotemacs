@@ -65,6 +65,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package restart-emacs)
 
+(defun kill-all-buffers ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list)))
+
 (desktop-save-mode 1)
 (save-place-mode t)
 

@@ -69,6 +69,9 @@
   (interactive)
   (mapc 'kill-buffer (buffer-list)))
 
+;; open .h files in c++ mode
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 (desktop-save-mode 1)
 (save-place-mode t)
 

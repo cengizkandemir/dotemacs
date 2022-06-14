@@ -47,7 +47,7 @@
   (cmake-mode . display-line-numbers-mode))
 
 (setq-default
- whitespace-line-column 80
+ whitespace-line-column 999
  whitespace-style '(face lines-tail empty trailing tab-mark))
 (add-hook 'prog-mode-hook #'whitespace-mode)
 

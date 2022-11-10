@@ -89,6 +89,7 @@
 (global-set-key (kbd "M-p") 'previous-error)
 (global-set-key (kbd "M-n") 'next-error)
 (global-set-key (kbd "H-y") "\C-a\C- \C-n\M-w\C-y\C-p\C-e")
+(global-set-key [f5] 'compile)
 (global-set-key [f7] 'recompile)
 
 (setq compilation-scroll-output t)

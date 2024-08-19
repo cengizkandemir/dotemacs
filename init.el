@@ -105,6 +105,9 @@
   (("H-M-p" . move-text-up)
    ("H-M-n" . move-text-down)))
 
+(use-package amx)
+(amx-mode)
+
 (use-package ivy
   :ensure swiper
   :bind

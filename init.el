@@ -193,6 +193,8 @@
 (setq-default c-default-style "ck")
 
 (add-hook 'c-mode-hook (lambda () (c-set-style "airties")))
+(add-hook 'c++-mode-hook (lambda () (setq comment-start "/* "
+                                          comment-end   " */")))
 
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 

@@ -82,13 +82,13 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
-(global-set-key (kbd "H-p") 'windmove-up)
-(global-set-key (kbd "H-n") 'windmove-down)
-(global-set-key (kbd "H-b") 'windmove-left)
-(global-set-key (kbd "H-f") 'windmove-right)
+(global-set-key (kbd "s-p") 'windmove-up)
+(global-set-key (kbd "s-n") 'windmove-down)
+(global-set-key (kbd "s-b") 'windmove-left)
+(global-set-key (kbd "s-f") 'windmove-right)
 (global-set-key (kbd "M-p") 'previous-error)
 (global-set-key (kbd "M-n") 'next-error)
-(global-set-key (kbd "H-y") "\C-a\C- \C-n\M-w\C-y\C-p\C-e")
+(global-set-key (kbd "s-y") "\C-a\C- \C-n\M-w\C-y\C-p\C-e")
 (global-set-key [f5] 'compile)
 (global-set-key [f7] 'recompile)
 
@@ -102,8 +102,8 @@
 
 (use-package move-text
   :bind
-  (("H-M-p" . move-text-up)
-   ("H-M-n" . move-text-down)))
+  (("s-M-p" . move-text-up)
+   ("s-M-n" . move-text-down)))
 
 (use-package amx)
 (amx-mode)
@@ -137,9 +137,9 @@
   (c-mode . hs-minor-mode)
   (rust-mode . hs-minor-mode)
   :bind
-  (("H-h" . hs-hide-block)
-   ("H-s" . hs-show-block)
-   ("H-t" . hs-toggle-hiding)))
+  (("s-h" . hs-hide-block)
+   ("s-s" . hs-show-block)
+   ("s-t" . hs-toggle-hiding)))
 
 
 (use-package org
